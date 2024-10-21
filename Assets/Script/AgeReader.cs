@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class AgeReader : MonoBehaviour
 {
-    private int currentAge= 21;
-    [SerializeField] private int years = 1;
-    
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int years = 3;
+    private void AddAge(int currentAge)
     {
-        currentAge = currentAge + years;
-        Debug.Log("Arlyn is " + currentAge + " years old in " + years + " years");
+        currentAge++;
+        Debug.Log("Arlyn is " + currentAge + " years old.");
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        for (int i = 0; i < years; i++)
+        {
+            AddAge(21+i);
+        }
     }
 }
